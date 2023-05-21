@@ -1,0 +1,64 @@
+SpaceTraders - Quickstart
+
+p
+Quickstart
+
+h1
+Mine Asteroids
+
+p
+Your mining drone is equipped with a mining laser, which can be used to extract valuable ores and minerals. You will need to navigate your ship to an asteroid field to send an extraction request.
+
+h2
+Fly to an asteroid field
+
+p
+You can navigate your new mining drone to the nearby asteroid field. Drones are slow to navigate but fairly cheap, so it may take a while for your drone to arrive.
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":asteroidFieldWaypointSymbol"   }'
+
+p
+Your ship navigation status should now be IN_TRANSIT and your route will show you the timestamp of your ship's arrival.
+
+p
+While your ship is in transit, most other requests for that ship will return an error code. Try sending the navigation request again to see the response for a ship in transit error code.
+
+h2
+Dock your ship
+
+p
+When your ship arrives at the target waypoint, we will want to refuel the ship before extracting any ores. You can dock your ship at a waypoint by sending the following request:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+h2
+Refuel your ship
+
+p
+Fuel is consumed when traveling between waypoints and warping between systems. When your ship arrives at the target waypoint, you can refuel your ship by sending the following request:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/refuel' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+Refuel requests will only succeed if the current location has fuel offered for sale at the marketplace. One unit of fuel at the marketplace replenishes 100 units in the ship's tank. If you try to refuel at a location that doesn't have fuel, you will receive an error code.
+
+p
+Before we can extract any ores, we will need to orbit the asteroid field. You can orbit a waypoint by sending the following request:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/orbit' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+h2
+Extract ores and minerals
+
+p
+Your mining drone is equipped with a mining laser, which can be used to extract ores and minerals from an asteroid field. You can extract ores by sending a POST request to the extract endpoint.
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/extract' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+After extraction, your ship will be on a cooldown and you won't be able to extract again until the cooldown expires. Try sending another extract request to see the response for a cooldown error code.

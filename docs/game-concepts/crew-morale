@@ -1,0 +1,25 @@
+SpaceTraders - Crew and Morale
+
+p
+Game Concepts
+
+h1
+Crew and Morale
+
+p
+Work in Progress
+
+p
+This feature is in active development and may not be fully implemented.
+
+p
+Ships require crew to operate. Crew can be hired at a shipyard, and crew wages are deducted from your credits when docking.
+
+p
+Crew morale determines how well your ship performs. Crew morale is affected by how aggresive your ship navigates, how often you return to port, and various hazards that your ship encounters.
+
+p
+Low crew morale can result in your ship being unable to perform actions, or taking more damage from hazards.
+
+p
+Simple drone ships do not require crew but have limited outfit options.

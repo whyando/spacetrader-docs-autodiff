@@ -1,0 +1,64 @@
+SpaceTraders - Systems and Waypoints
+
+p
+Game Concepts
+
+h1
+Systems and Waypoints
+
+h2
+Overview
+
+p
+The SpaceTraders universe is made of up of systems and waypoints. Every system has a type, which is typically a type of star, and a set of x, y coordinates.
+
+p
+Waypoints are locations within a system that you can travel to. They can be planets, asteroids fields, orbital stations, or any other type of location.
+
+p
+Ships can navigate between waypoints and jump or warp between systems.
+
+h2
+Systems
+
+p
+Systems are the primary locations in the SpaceTraders universe. There are roughly 5,000 systems in the universe to explore. You can view a list of all systems in the universe by calling the following endpoint:
+
+code
+curl 'https://api.spacetraders.io/v2/systems' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+The best way to visualize the game would be to plot the x and y coordinates of each system on a graph, which should show a rough spiral shape of the universe.
+
+p
+Although a majority of system types are stars, there are also a few other types of systems. Some of these include Black Holes, Neutron Stars, and Nebula.
+
+p
+Be careful when traveling into unknown systems, as some of these types can be dangerous to your ships.
+
+h2
+Waypoints
+
+p
+Waypoints are locations within a system that you can travel to. They can be planets, asteroids fields, orbital stations, or any other type of traversible location with an x, y coordinate.
+
+p
+You can view a list of all waypoints in a system by calling the following endpoint:
+
+code
+curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+A waypoint has a type, a set of x, y coordinates, and a unique symbol name that you can use to reference it. Waypoints may also have orbital waypoints, which are locations within the orbit of the location.
+
+p
+For example, a planet may have an space station as well as two moons that orbit it. The planet itself would be the parent waypoint, and the space station and moons would be orbital waypoints.
+
+p
+When visualizing a system, you can map the coordinates of each waypoint to a graph to see where they are located in the system. Orbitals will share the same x, y coordinates as the location they orbit.
+
+p
+Waypoints have a list of traits that describe the details, features and characteristics of the location. For example, a planet may have a trait that describes the atmosphere as "toxic", the political leanings as "authoritarian", or the population as "sparse".
+
+p
+Two traits that are particularly important are the MARKETPLACE and SHIPYARD traits. These traits indicate that the location has a marketplace and shipyard, respectively. You can use these traits to determine if you can buy or sell goods at a location, or if you can purchase a new ship.

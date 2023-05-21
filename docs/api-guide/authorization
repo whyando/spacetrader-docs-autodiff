@@ -1,0 +1,31 @@
+SpaceTraders - API Guide
+
+p
+API Guide
+
+h1
+Authorization
+
+p
+Account management
+
+p
+The Account Management dashboard is coming soon which will allow you to manage your agents and tokens.
+
+p
+Until then, you will have to obtain a token by registering as a new agent.
+
+p
+The SpaceTraders API requires that you authenticate with a valid JWT bearer token in order to access the API.
+
+p
+Once you have a JWT bearer token, you can use it to authenticate with the API by including it in the Authorization header of every request. The following is an example of authenticating with the API:
+
+code
+curl 'https://api.spacetraders.io/v2/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+The SpaceTraders API will return a 400 Unauthorized error if you attempt to access an endpoint without a valid JWT bearer token.
+
+p
+One common mistake is to forget to include the Bearer prefix in the Authorization header. For example, a proper Authorization header contains the value Bearer <token>.

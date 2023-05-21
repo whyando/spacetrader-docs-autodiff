@@ -1,0 +1,91 @@
+SpaceTraders - API Guide
+
+p
+API Guide
+
+h1
+OpenAPI Spec
+
+p
+The SpaceTraders API is documented using the OpenAPI Specification. This allows users to generate a client library for the API in many different languages. You can find the repository with our OpenAPI specification here.
+
+h2
+Stoplight Studio
+
+p
+We provide access to our API documentation through Stoplight Studio. This allows you to interact with the API directly from your browser and is synced with our OpenAPI specification.
+
+h2
+Generating a Client Library
+
+p
+The OpenAPI specification can be used to generate a client library for the SpaceTraders API in many different languages using the OpenAPI Generator .
+
+p
+The following is an example of generating a TypeScript client library using the typescript-axios generator and the bundled specification from Stoplight.
+
+code
+openapi-generator generate \
+ -i https://stoplight.io/api/v1/projects/spacetraders/spacetraders/nodes/reference/SpaceTraders.json?fromExportButton=true&snapshotType=http_service&deref=optimizedBundle \
+ -o packages/spacetraders-sdk \
+ -g typescript-axios \
+ --additional-properties=npmName="spacetraders-sdk" \
+ --additional-properties=npmVersion="2.0.0" \
+ --additional-properties=supportsES6=true \
+ --additional-properties=withSeparateModelsAndApi=true \
+ --additional-properties=modelPackage="models" \
+ --additional-properties=apiPackage="api"
+
+
+p
+Bundled References
+
+p
+Our specification file uses the $ref keyword frequently to reference other files. This can cause issues with some OpenAPI generators.
+
+p
+However, Stoplight has a link for the bundled specification that can be used to generate a client library.
+
+h2
+Using the Client Library
+
+p
+The generated client library can be used to interact with the SpaceTraders API. The following is an example of using the TypeScript client library to retrieve a list of systems.
+
+code
+import axios from 'axios'
+import {
+  Configuration,
+  Cooldown,
+  DefaultApi,
+  FleetApi,
+  SystemsApi
+} from 'spacetraders-sdk'
+
+export const configuration = new Configuration({
+  basePath: process.env.BASE_PATH,
+  accessToken: process.env.ACCESS_TOKEN
+})
+
+export const instance = axios.create({})
+
+// example retry logic for 429 rate-limit errors
+instance.interceptors.response.use(undefined, async (error) => {
+  const apiError = error.response?.data?.error
+
+  if (error.response?.status === 429) {
+    const retryAfter = error.response.headers['retry-after']
+
+    await new Promise((resolve) => {
+      setTimeout(resolve, retryAfter * 1000)
+    })
+
+    return instance.request(error.config)
+  }
+
+  throw error
+})
+
+const system = new SystemsApi(configuration, undefined, instance)
+
+system.getSystems().then(console.log)

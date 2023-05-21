@@ -1,0 +1,55 @@
+SpaceTraders - Resources
+
+p
+Resources
+
+h1
+Server Resets
+
+p
+SpaceTraders is currently in alpha and under active development. This allows us to iterate and make changes frequently, including bug fixes, game rebalancing, and adding new features. To facilitate this process, we perform regular server resets.
+
+p
+When the server resets, all data is wiped, and everyone starts from scratch. This includes all players, ships, trades, etc.
+
+p
+If you would like to reserve your agent call sign between resets, consider donating to our development efforts:
+
+p
+Donate to SpaceTraders ->
+
+h2
+Why Reset?
+
+p
+We understand that server resets are an inconvenience. However, as SpaceTraders is currently in its alpha stage, these resets are a critical part of our ongoing development process.
+
+h2
+Reset Schedule
+
+p
+We typically carry out server resets on Saturday mornings. The frequency could be either weekly or bi-weekly, depending on the need for changes and improvements.
+
+p
+You can use the server status endpoint to find out when the server was last reset and when the next planned reset will occur.
+
+p
+Keep in mind that all tokens become invalid after a server reset. After each reset, you will need to register again as a new agent. We've added a message to the token validation error to help explain the reset process.
+
+h2
+Hotfixes and Stability
+
+p
+Sometimes, we may push hotfixes directly to the server without a full reset. We encourage players to report any bugs they encounter; this helps us maintain the game's stability.
+
+p
+We'll do our best to pre-announce any significant changes expected in the next server reset, so players aren't caught off guard.
+
+h2
+Stay Up-to-date
+
+p
+Please check our announcements channel in our Discord to stay updated on the server reset schedule and other important updates.
+
+p
+As we progress in our development, we plan to slow down the frequency of server resets. Our long-term goal is to avoid full resets in favor of seasonal gameplay, which will involve dedicated server instances for each season.

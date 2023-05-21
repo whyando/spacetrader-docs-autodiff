@@ -1,0 +1,79 @@
+SpaceTraders - Quickstart
+
+p
+Quickstart
+
+h1
+New Game
+
+p
+The quickstart guide should take about 5 minutes and will walk a new user through some common HTTP requests when working with the SpaceTraders API.
+
+p
+Each request can be sent from the browser or pasted into your terminal using cURL. The parameters of each request should update automatically as you complete each step.
+
+h2
+Starting a new game
+
+p
+To start a new game, you will need to create an agent and generate an access token. Access tokens are used to authenticate all requests to the API, and are required to play the game.
+
+h2
+Register as a new agent
+
+p
+Players are called agents, and each agent is identified by a unique call sign, such as ZER0_SH0T or SP4CE_TR4DER. All of your ships, contracts, credits, and other game assets will be associated with your agent identity.
+
+p
+Your starting faction will determine which system you start in, but the default faction should be fine for now.
+
+p
+Edit the symbol below with your call sign and then send the request to register as a new agent.
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/register' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "INSERT_CALLSIGN_HERE",    "faction": "COSMIC"   }'
+
+p
+The response should include your access token, which will be used to authenticate all future requests. For now you should save this token in a safe place. Anyone with your access token can access your agent and control your ships.
+
+p
+You should also see data for your agent along with your starting faction, command ship, and faction contract. To view your agent details again, you can send the following request:
+
+code
+curl 'https://api.spacetraders.io/v2/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+h2
+View your starting location
+
+p
+Your command ship is located at your faction's headquarters. Each location in SpaceTraders is referred to as a waypoint. Ships can navigate between different waypoints in a system and even jump across systems in the universe.
+
+p
+The universe is made up of many systems, each with a set of waypoints. Every waypoint has a symbol such as X1-DF55-20250Z made up of the sector, system, and location of the waypoint. For example, X1 is the sector, X1-DF55 is the system, and X1-DF55-20250Z is the waypoint.
+
+p
+To view your starting waypoint location, send the following request:
+
+code
+curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints/:waypointSymbol' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+Dynamic Request Values
+
+p
+Dynamic values in the documentation should autofill with values from other requests as you complete them, but you can also manually edit the values.
+
+p
+For example, you can edit the :systemSymbol and :waypointSymbol variables in the above request.
+
+p
+Each waypoint has a type (planet, moon, orbital station), a set of coordinates, and some traits describing the features of the location. For example, a waypoint may have a marketplace for trading goods, or a shipyard for buying and selling ships.
+
+h2
+Coordinates
+
+p
+A quick note about coordinates: each waypoint has a set of x, y coordinates that describe its location relative to the system it is in. System coordinates are absolute units at the galactic scale.
+
+p
+When visualizing the universe, you can use the system coordinates to determine the position of each system, and then use the waypoint coordinates to determine the relative position of each waypoint within that system (the center of the system is 0,0).

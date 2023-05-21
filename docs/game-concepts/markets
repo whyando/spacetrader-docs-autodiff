@@ -1,0 +1,85 @@
+SpaceTraders - Markets
+
+p
+Game Concepts
+
+h1
+Markets
+
+h2
+Overview
+
+p
+Markets in SpaceTraders are driven by supply and demand. Marketplaces will list of goods for trade that are either imports, exports, or exchange goods.
+
+p
+Exports are goods produced at the waypoint, and typically have a lower purchase price than import goods. Import goods are consumed at the waypoint, and typically have a higher sell price.
+
+p
+Trade routes between imports and exports will typically be the most profitable way to earn credits in SpaceTraders.
+
+code
+curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints/:waypointSymbol/market' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+h2
+Visibility
+
+p
+Price data and transaction history are only available if you have a ship located at the waypoint. It is common to send cheap probe ships into orbit around a waypoint to gather and monitor market data.
+
+p
+Having visibility into market data over time can be highly profitable. You can use this data to predict the future price of goods and plan your trade routes accordingly.
+
+h2
+Exports
+
+p
+Exports are goods produced over time by the civilization where the good is listed.
+
+p
+The purchase price of an export good tends to decrease over time as supply naturally increases from production. As agents buy up supply from an export good, prices fall and production tends to increase to meet the demand.
+
+p
+Exports are also constrained by the supply of imports. When a market has an unmet need for importing goods, production for export goods will be constrained, typically leading to an increase in export prices.
+
+h2
+Imports
+
+p
+Imports are goods consumed over time by the civilization where the good is listed.
+
+p
+The sell price of an import good tends to increase over time as supply naturally decreases from consumption. As agents supply more of an import good, consumption will typically increase as the price for that good goes down.
+
+p
+If a waypoint has an unmet supply for their imports, it can contribute to instability and potentially cause a collapse of the market. This can lead to increased piracy in the system, making it more dangerous for agents to trade and exchange goods.
+
+h2
+Exchange goods
+
+p
+Another type of market listing includes exchange goods. These goods are neither consumed nor produced at the waypoint. Instead, they are traded strictly among agents.
+
+p
+The price of an exchange good tends to fluctuate based on supply and demand driven by agents.
+
+h2
+Commodity goods
+
+p
+Fuel is the most common exchange good listed across markets. Fuel is consumed by agents to travel between waypoints, which means there is always a natural demand for the good.
+
+p
+The price of fuel can skyrocket at popular locations with high demand, but where players aren't providing enough supply.
+
+h2
+Growing markets
+
+p
+Smaller civilizations typically start with a limited number of basic goods in their market. As agents trade and exchange goods, the market will grow and trigger the introduction of new types of goods.
+
+p
+Larger civilizations will typically export higher technology and more advanced goods, but in turn have a higher demand for commodity goods that must be met by agents. Failing to meet the demand for commodity goods can cause the market to collapse.
+
+p
+Maintaining a healthy market is a key part of maximizing profitability for agents. Later-stage markets tend to offer much high margins on goods, but they are also more competitive and require more attention to maintain.

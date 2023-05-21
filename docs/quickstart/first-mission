@@ -1,0 +1,43 @@
+SpaceTraders - Quickstart
+
+p
+Quickstart
+
+h1
+First Mission
+
+p
+Faction contracts are a good way to earn credits and learn the basics of the game. Your starter contract will require you to mine an asteroid field and deliver the ores to a nearby waypoint.
+
+h2
+View Contracts
+
+p
+When you registered your agent, you were given a starter contract. If you don't have the contract ID, you can view your contracts again by sending the following request:
+
+code
+curl 'https://api.spacetraders.io/v2/my/contracts' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+h2
+Contract Terms
+
+p
+Each contract will have a set of terms, which describe the requirements for completing the contract. For example, you may be required to deliver a specified amount of cargo to a destination waypoint.
+
+p
+Contracts have a deadline for accepting the contract, and the terms will have a deadline for when the delivery must be completed. If you fail to meet the deadline, the faction will revoke the contract reclaim any advance funds you received.
+
+h2
+Accept your contract
+
+p
+On accepting a contract, you will receive a small portion of the credits up front and the final amount on delivery. To accept your contract, send the following request:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/accept' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+Don't stress too much about the details of the contract for now. If the contract is too difficult, you can always let the contract expire and accept a new one, or start a new agent and try again. Use the starter contract as an opportunity to learn the basics of the game.
+
+p
+To complete the contract, you will need to purchase a ship, navigate the ship to an asteroid field, extract ores until your cargo hold is full, and deposit them at the delivery waypoint.

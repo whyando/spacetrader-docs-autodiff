@@ -1,0 +1,40 @@
+SpaceTraders - Exploration
+
+p
+Game Concepts
+
+h1
+Exploration
+
+p
+Work in Progress
+
+p
+This feature is in active development and may not be fully implemented.
+
+p
+Ships can explore the SpaceTraders universe by navigating between waypoints and jumping between systems.
+
+p
+Some waypoints contain ancient ruins that can be surveyed for valuable resources and technology.
+
+p
+Factions at the edge of the universe are more likely to trade in rare technology and trade goods.
+
+p
+Some systems contain hidden hazards that can damage your ship and crew. Exploration is risky but can be very profitable.
+
+h2
+Charting
+
+p
+Ships can chart a system to make the waypoint information available to other players. Without a chart, ships will need to use their scanners to detect waypoint information or travel to the waypoint to learn about it.
+
+h2
+Asteroid Mining
+
+p
+Some asteroid waypoints contain an abundance of valuable ores and minerals that can only be uncovered by sending ships to the location to survey and extract the resources.
+
+p
+Plotting yields over time can reveal the best locations to mine. However, these sources are not inifinite, and over-mining can cause the asteroids to collapse.

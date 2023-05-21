@@ -1,0 +1,43 @@
+SpaceTraders - Quickstart
+
+p
+Quickstart
+
+h1
+Last Steps
+
+p
+When you've mined a full cargo hold of the ores in your contract, you can send your ship to the delivery waypoint to deliver goods on the contract. Once the terms of the contract are complete, you can submit it to receive the full payment.
+
+h2
+Navigate to delivery waypoint
+
+p
+With a full cargo hold and a full tank, you can navigate your ship to the delivery waypoint. You can send a POST request to the my/ships/:shipSymbol/navigate endpoint to navigate your ship to a waypoint.
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":deliveryWaypointSymbol"   }'
+
+h2
+Deliver contract goods
+
+p
+Once your ship arrives, send a POST request to the my/contracts/:contractId/deliver endpoint. You will need to specify the ship you are delivering with, along with the type of good you are delivering, and the number of units.
+
+p
+This request will only succeed if your ship is at the delivery waypoint, and your cargo hold contains the required goods.
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/deliver' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "shipSymbol": ":miningShipSymbol",    "tradeSymbol": "COPPER_ORE",    "units": "100"   }'
+
+h2
+Fulfill contract
+
+p
+You will need to continue to mine ores and ship them to the delivery waypoint until the contract is complete.
+
+p
+Once the terms have been met, you can send a request to the following endpoint to receive the full payment.
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/fulfill' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'

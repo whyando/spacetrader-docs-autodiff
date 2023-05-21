@@ -1,0 +1,100 @@
+SpaceTraders - Ship Navigation
+
+p
+Game Concepts
+
+h1
+Ship Navigation
+
+h2
+Overview
+
+p
+Ships can navigate between waypoints within a system and jump or warp between systems across the SpaceTraders universe. Ships can also dock at waypoints to refuel, repair, and trade goods.
+
+p
+Movement in the SpaceTraders universe is based on a grid system. Ships can only move from and to other waypoints within the same system. To move between systems, you must either jump or warp your ship.
+
+p
+When traveling to a new waypoint or system, your ship nav's arrival timestamp will be updated to reflect when your ship will arrive at it's destination.
+
+h2
+Orbiting and docking
+
+p
+Before a ship can travel, you must first confirm that the ship is undocked and in-orbit. You can call the following endpoint to confirm your ship is in orbit, or command it to move into orbit:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/orbit' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+Conversely, you can call the following endpoint to dock your ship at a waypoint:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+The orbit and dock requests are idempotent, meaning you can call them successively and the result will be the same. This is useful if you want to ensure your ship is in orbit before you attempt to travel to another waypoint.
+
+h2
+Flight mode
+
+p
+Your ship's flight mode determines the rate at which it travels and the amount of fuel consumed. There are four flight modes:
+
+p
+To update your ship's flight mode, you can call the following endpoint:
+
+code
+curl --request PATCH \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/nav' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "flightMode": "CRUISE"   }'
+
+h2
+Waypoint navigation
+
+p
+When navigating, a ship will move to the destination, but it will not arrive immediately. Instead, it will take time to travel to the destination, and you can use the navigation status to determine when the ship will arrive.
+
+p
+Navigation also consumes fuel, which is required to power the ship's engines. The amount of fuel consumed is based on the distance between the current location and the destination.
+
+p
+To navigate your ship to a waypoint, you can call the following endpoint:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":waypointSymbol"   }'
+
+h2
+Warping and jumping
+
+p
+When moving between systems, the ship can choose to jump or warp depending on the ship's technology. Warping your ship moves it into interdimensional space, and it behaves very similar to normal waypoint travel in that it takes time and consumes normal fuel.
+
+p
+Jumping a ship however is instantaneous, but it requires a jump drive and a unit of antimatter. Jump drives are expensive and rare, but your command ship starts with one.
+
+p
+To warp your ship to a new system, you can call the following endpoint:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/warp' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "systemSymbol": ":systemSymbol"   }'
+
+p
+To jump your ship to a new system, you can call the following endpoint:
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/jump' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "systemSymbol": ":systemSymbol"   }'
+
+h2
+Gate travel
+
+p
+If your ship isn't equipped with a jump or warp drive, you can still travel between systems by using faction gates. Gates are special waypoints that allow you to travel between systems.
+
+p
+Some faction gates are restricted based on your agent's reputation with the faction. To unlock access to new systems, you can increase your reputation with the faction by completing contracts for them.
+
+h2
+Refueling
+
+p
+Ships can be refueled at any waypoint with a marketplace that offers fuel for sell. One unit of fuel at the marketplace replenishes 100 units in the ship's tank. Often fuel prices can be driven high by demand, so it's best to refuel your ship when fuel prices are low or to help drive prices down by selling fuel at high-traffic marketplaces.

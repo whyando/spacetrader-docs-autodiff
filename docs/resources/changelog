@@ -1,0 +1,82 @@
+SpaceTraders - Resources
+
+p
+Resources
+
+h1
+Changelog
+
+p
+This is a list of all the changes made to the game. We will begin updating the changelog at least once a week.
+
+p
+If you have any questions, please ask in the #general-chat channel on Discord.
+
+h2
+May 20, 2023
+
+p
+In this release, we continued to apply fixes and tweak gameplay mechanics. The universe seeder parameters have been updated to offer more factions, more shipyards and more markets. We've also added the ability to generate contracts, which we will further enhance in the next release. Contracts can now expire and the faction will take back any credits advanced to the agent. Agents can only have one contract at a time until we have a chance to add more features around negotiation.
+
+p
+Next week we will either need to reset on Friday or the following Monday, or skip a week due to scheduling conflicts with the holiday weekend. We will announce the decision in the #announcements channel on Discord.
+
+p
+Breaking
+
+code
+expiration
+
+code
+deadlineToAccept
+
+p
+Updates
+
+code
+/my/agent/events
+
+p
+Fixes
+
+p
+Internal
+
+p
+Documentation
+
+p
+We'll be discussing what to focus on for the next reset in Discord (likely installing / removing modules and mounts). Enjoy!
+
+h2
+May 14, 2023
+
+p
+This week we focused primarily on bug fixes and internal improvements. We also added the ability to reserve call signs with Stripe donations.
+
+p
+The server was reset on May 13, 2023 at 10:00AM PST. All tokens prior to the reset are now invalid. You will need to register a new agent and generate a new access token to play the game.
+
+p
+We will be resetting the server on a regular cadence until we are confident that the game is stable enough to run for longer periods of time.
+
+p
+This will be announced in the #announcements channel on Discord. We will also add data to the status endpoint to indicate when the next reset will occur, and better handle error messages when users attempt to use an invalid token.
+
+p
+Next week we will continue to focus on patching core issues, improving documentation, and solidfying the process around server resets and how we communicate them.
+
+p
+Fixes
+
+p
+Updates
+
+p
+Internals
+
+p
+Removals
+
+p
+Documentation
