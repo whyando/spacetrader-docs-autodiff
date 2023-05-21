@@ -1,5 +1,7 @@
 import { Dataset, CheerioCrawler, log, LogLevel } from 'crawlee';
 import fs from 'fs'
+import Url from 'url-parse'
+import path from 'path'
 
 log.setLevel(LogLevel.DEBUG);
 
@@ -9,7 +11,7 @@ const crawler = new CheerioCrawler({
     maxRequestRetries: 1,
     requestHandlerTimeoutSecs: 30,
 
-    maxRequestsPerCrawl: 1000,
+    maxRequestsPerCrawl: 100,
 
     // - $: the cheerio object containing parsed HTML
     async requestHandler({ request, enqueueLinks, $ }) {
@@ -56,18 +58,31 @@ log.debug('Crawler finished.');
 
 // save the dataset to files
 const dataset = await Dataset.open('default')
+const files = []
 await dataset.forEach(async (article, index) => {
     // extract the path only from the url
-    const pathMatch = article.url.match(/https:\/\/docs\.spacetraders\.io\/(.*)/)
-    if (!pathMatch) return
-    const file = './docs/' + pathMatch[1]
-
-    // create the directory if it doesn't exist
-    const dir = file.split('/').slice(0,-1).join('/')
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true })
+    const url = new Url(article.url)
+    if (url.host != 'docs.spacetraders.io') {
+        console.log(`${article.url} doesn't match expected uri format: ${url.host}`)
+        return
     }
+    const filename = path.normalize(path.join('docs', url.pathname.split('\/').filter(x => x.length != 0).join('\/')))
+
     const content = article.title + '\n\n'
         + article.article_text.map(x => x.tag + '\n' + x.text).join('\n\n')
-    fs.writeFileSync(file, content)
+    files.push({ filename, content })
 })
+
+// Empty docs folder
+for (const file of fs.readdirSync('./docs/')) {
+    fs.rmSync(path.join('./docs/', file), { recursive: true });
+}
+
+for (let { filename, content } of files) {
+    const isPrefix = files.some(f => f.filename != filename && f.filename.startsWith(filename))
+    if (isPrefix) {
+        filename = path.join(filename, 'index')
+    }
+    fs.mkdirSync(path.dirname(filename), { recursive: true });
+    fs.writeFileSync(filename, content)
+}

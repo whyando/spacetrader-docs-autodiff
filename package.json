@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "crawlee": "^3.3.2",
-    "playwright": "^1.34.0"
+    "playwright": "^1.34.0",
+    "url-parse": "^1.5.10"
   },
   "name": "spacetrader_docs",
   "type": "module",
   "version": "1.0.0",
   "main": "crawl.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
