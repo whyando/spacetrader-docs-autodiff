@@ -23,13 +23,17 @@ const crawler = new CheerioCrawler({
         const article_text = []
         function f(el) {
             const x = $(el)
-            if (el.type == 'tag' && ['h1','h2','p','code'].includes(el.name)) {
+            const children = x.children()
+            if (children.length == 0 || (el.type == 'tag' && ['h1','h2','h3','p','code'].includes(el.name))) {
+                const text = x.text()
+                if (text.length == 0)
+                    return
                 article_text.push({
                     tag: el.name,
                     text: x.text(),
                 })
             } else {
-                x.children().toArray().forEach(e => f(e))
+                children.toArray().forEach(e => f(e))
             }
         }
         $('article').toArray().forEach(e => f(e))
