@@ -12,29 +12,113 @@ Rate Limits
 p
 The SpaceTraders API is subject to rate limits. The following is a list that outlines the rate limits that are currently in place:
 
+th
+Type
+
+th
+Status
+
+th
+Limit
+
+th
+Burst Limit
+
+th
+Burst Duration
+
+td
+IP Address
+
+td
+429
+
+td
+2 requests per second
+
+td
+10 requests
+
+td
+10 seconds
+
+td
+Account
+
+td
+429
+
+td
+2 requests per second
+
+td
+10 requests
+
+td
+10 seconds
+
+td
+DDoS Protection
+
+td
+502
+
+td
+-
+
+td
+-
+
+td
+-
+
 h2
 Response Headers
 
 p
 The SpaceTraders API will return the following headers in a 429 response to indicate the current rate limit status:
 
+th
+Header Name
+
+th
+Description
+
 code
 x-ratelimit-type
+
+td
+The type of rate limit that was exceeded.
 
 code
 x-ratelimit-limit
 
+td
+The maximum number of requests that can be made in a given time period.
+
 code
 x-ratelimit-remaining
+
+td
+The number of requests remaining in the current time period.
 
 code
 x-ratelimit-reset
 
+td
+The time at which the current time period will reset.
+
 code
 x-ratelimit-limit-burst
 
+td
+The maximum number of requests that can be made in a given burst duration.
+
 code
 x-ratelimit-limit-per-second
+
+td
+The maximum number of requests that can be made in a given time period.
 
 p
 The only time these response headers are not returned is when the DDoS protection kicks in. In that case, the response will be a 502 Bad Gateway and the response body will be empty.

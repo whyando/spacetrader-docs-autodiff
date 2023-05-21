@@ -15,6 +15,9 @@ View Contracts
 p
 When you registered your agent, you were given a starter contract. If you don't have the contract ID, you can view your contracts again by sending the following request:
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/my/contracts' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
@@ -32,6 +35,9 @@ Accept your contract
 
 p
 On accepting a contract, you will receive a small portion of the credits up front and the final amount on delivery. To accept your contract, send the following request:
+
+button
+Send Request
 
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/accept' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'

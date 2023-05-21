@@ -24,6 +24,15 @@ Next week we will either need to reset on Friday or the following Monday, or ski
 p
 Breaking
 
+li
+fixed Retry-After header to conform to whole seconds
+
+li
+ships can no longer extract while docked
+
+li
+Cooldown expiredAt is now an optional field (preparing to convert the cooldown response from 204 to 200)
+
 code
 expiration
 
@@ -33,17 +42,68 @@ deadlineToAccept
 p
 Updates
 
+li
+Tweaked universe seeding parameters and contract generation parameters (b028d92f, 898abbbc)
+
+li
+Enhanced faction dynamics: added faction flag for recruitment status and starting faction field to agent (6b71144a, b6927b45)
+
+li
+Updated transaction elements: added transaction to refuel response, increased transaction history to 20 items (dc6f5a2c, dc7501f2)
+
+li
+Adjusted game mechanics: increased scarcity of diamonds, lowered jump gate range with cooldown as a product of distance jumped, added negotiate contract endpoints, and fixed starting contract params, added contract expiry and advance credits repossession (b1ecf871, 6465bf59, e1f839cd, 3d30b3f3)
+
+li
+Enhanced agent token with version and reset_date (a0c3344a)
+
+li
+Updated status endpoint to include more info, reset, and links (f30290f2, 5fc47f70, 37177c17)
+
+li
+Contracts can now fail and the faction will reclaim any advance credits provided on accepting the contract
+
 code
 /my/agent/events
 
 p
 Fixes
 
+li
+Addressed various gameplay bugs: fixed ship transfer rules, , addressed issues with chartable systems, survey validation date time format, and survey exhausted error, and fixed refining and extraction while on cooldown bugs (b609eb9c, f11a9e45, edc87ede, ac820dd7, 35bff480, cc4a5eb2, 7d43f3d0)
+
+li
+Adjusted agent symbol check in transaction and made integer only in pagination (4cb08b63, ee0b9c6c)
+
+li
+Ensured ship must be in orbit to extract (36f4e0ff)
+
 p
 Internal
 
+li
+Provided a helpful message for error regarding reserved call signs (4e6753da)
+
+li
+Regenerated OpenAPI types (f123a3c1, e1f839cd)
+
+li
+Added server resets page to docs and fixed tests (d5744a19, 79af1229)
+
+li
+Optimized several endpoints including contract deliver, warp, ship transfer, refuel, navigate route, dock and orbit routes, sell cargo, and extraction (5dcef3f9, bb0499d4, faca4373, d545f0b7, e6e89f06, fe19bbb5, af8be35f, 7ebbfacb, 77781131)
+
+li
+Updated language in changelog, added more test commands, and increased volume for refinement of goods (c08250db, d1c31fe3, c3d24fd8)
+
+li
+Added changelog page (20646299)
+
 p
 Documentation
+
+li
+Updated rate limit page with DDoS information (2580e38f)
 
 p
 We'll be discussing what to focus on for the next reset in Discord (likely installing / removing modules and mounts). Enjoy!
@@ -69,14 +129,68 @@ Next week we will continue to focus on patching core issues, improving documenta
 p
 Fixes
 
+li
+fixed exploit with refining while on cooldown
+
+li
+fixed exploit with extraction while on cooldown
+
+li
+fixed bug where a cooldown would still happen even when an error is thrown
+
+li
+fixed the server error message to link to the new api-docs repository
+
+li
+fixed bug where survey error was thrown after extraction
+
+li
+fixed bug where shipyard supply was not updating on purchase
+
+li
+fixed bug where warp drives / mineral processors were not required to warp / extract
+
+li
+fixed bug where refueling ship in small quantities was free
+
+li
+fixed bug where import re-purchase prices were too low during supply shock\
+
 p
 Updates
+
+li
+added the ability to reserve call signs with Stripe donations
 
 p
 Internals
 
+li
+fixed server 500 errors related to database connection issues
+
+li
+scaled database to allow for more concurrent connections
+
 p
 Removals
 
+li
+removed token validation from public endpoints
+
 p
 Documentation
+
+li
+added detail about generating Open API clients from the Stoplight bundled export
+
+li
+fixed various typos and links
+
+li
+added clarification on how refueling works
+
+li
+added clarification on how sector / system / waypoint symbols work
+
+li
+added donation link to support the game

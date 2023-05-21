@@ -15,6 +15,9 @@ View market data
 p
 To view the types of goods available at the market, you can send the following request. Each market has a list of imports, exports and exchange goods which can be purchased and sold at the location.
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints/:asteroidFieldWaypointSymbol/market' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
@@ -30,6 +33,9 @@ List ship cargo
 p
 You can view the cargo in your ship by sending a GET request to the my/ships/:shipSymbol endpoint. You will want to sell the ores and minerals in your cargo hold that don't match the contract requirements.
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
@@ -39,11 +45,17 @@ Sell goods
 p
 Before you can sell your cargo at the market, you will first need to dock your ship. You can dock your ship by sending a POST request to the my/ships/:shipSymbol/dock endpoint.
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 You can sell your cargo at a marketplace by sending a POST request to the my/ships/:shipSymbol/sell endpoint. You will need to specify the type of good you want to sell, along with the number of units.
+
+button
+Send Request
 
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/sell' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "IRON_ORE",    "units": "100"   }'

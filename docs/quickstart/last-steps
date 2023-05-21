@@ -15,6 +15,9 @@ Navigate to delivery waypoint
 p
 With a full cargo hold and a full tank, you can navigate your ship to the delivery waypoint. You can send a POST request to the my/ships/:shipSymbol/navigate endpoint to navigate your ship to a waypoint.
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":deliveryWaypointSymbol"   }'
 
@@ -27,6 +30,9 @@ Once your ship arrives, send a POST request to the my/contracts/:contractId/deli
 p
 This request will only succeed if your ship is at the delivery waypoint, and your cargo hold contains the required goods.
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/deliver' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "shipSymbol": ":miningShipSymbol",    "tradeSymbol": "COPPER_ORE",    "units": "100"   }'
 
@@ -38,6 +44,9 @@ You will need to continue to mine ores and ship them to the delivery waypoint un
 
 p
 Once the terms have been met, you can send a request to the following endpoint to receive the full payment.
+
+button
+Send Request
 
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/fulfill' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'

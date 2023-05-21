@@ -24,6 +24,9 @@ Systems
 p
 Systems are the primary locations in the SpaceTraders universe. There are roughly 5,000 systems in the universe to explore. You can view a list of all systems in the universe by calling the following endpoint:
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/systems' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
@@ -45,6 +48,9 @@ Waypoints are locations within a system that you can travel to. They can be plan
 p
 You can view a list of all waypoints in a system by calling the following endpoint:
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
@@ -56,6 +62,9 @@ For example, a planet may have an space station as well as two moons that orbit 
 
 p
 When visualizing a system, you can map the coordinates of each waypoint to a graph to see where they are located in the system. Orbitals will share the same x, y coordinates as the location they orbit.
+
+h3
+Traits
 
 p
 Waypoints have a list of traits that describe the details, features and characteristics of the location. For example, a planet may have a trait that describes the atmosphere as "toxic", the political leanings as "authoritarian", or the population as "sparse".

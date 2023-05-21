@@ -18,6 +18,9 @@ The API token generated when you register is scoped to your agent. You can use t
 p
 Every endpoint under the /my namespace requires an API token and returns data specific to your agent. For example, you can use the following API request to view your current reputation with each faction.
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/my/factions' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
@@ -27,17 +30,29 @@ Agent vs Account
 p
 An agent is not the same as your SpaceTraders account. Accounts are tied to an email address and allow you to login to the dashboard to manage API tokens and webhooks.
 
+h3
+Creating an agent
+
 p
 To register as a new agent, you must choose a unique call sign and a starting faction. This call sign is used to identify yourself to other players in the universe.
 
 p
 This will grant you a command ship, 100,000 credits, and a starting faction contract. Your command ship will be docked at the faction's home system.
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/register' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "YOUR_CALL_SIGN",    "faction": "COSMIC"   }'
 
+h3
+Viewing your agent
+
 p
 Once you have registered, you can use the following API request to view your agent's current status. An agent will have a unique call sign, credits, and a headquarters location.
+
+button
+Send Request
 
 code
 curl 'https://api.spacetraders.io/v2/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
@@ -51,11 +66,20 @@ Factions are the primary NPC organizations in SpaceTraders. Each faction will ha
 p
 Factions are spread across the universe and can be found by exploring new systems.
 
+h3
+Viewing factions
+
 p
 During the alpha there are only a few factions, but we plan to add more in the future. You can view the current list of factions using the following API request.
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/factions' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+h3
+Faction contracts
 
 p
 Factions will offer contracts to agents in exchange for credits and reputation. Every agent starts with a basic contract to deliver a mined ore to the faction's home world.
@@ -66,11 +90,17 @@ On accepting a contract, the agent will be given a deadline to complete the term
 p
 To view your current contracts, you can use the following API request.
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/my/contracts' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 As agents complete contracts and conduct trade with factions, they earn reputation, which can be used to unlock new types of ships, upgrades, gate access, and high margin trade goods.
+
+h3
+Generating contracts
 
 p
 Coming Soon

@@ -51,6 +51,9 @@ SpaceTraders is an open-universe game and learning platform that offers a set of
 p
 The API is documented using OpenAPI and Stoplight Studio. You can send your first request right here in your browser to check the status of the game server.
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/'
 
@@ -74,6 +77,30 @@ Roadmap
 
 p
 We plan to work toward the following features and capabilities. If you have any feedback or suggestions, please share them in our Discord channel.
+
+li
+scavenge derelict ships for valuable cargo and spare parts
+
+li
+create webhooks to receive notifications when events occur in the game
+
+li
+search for ancient artifacts on distant planets to sell for profit
+
+li
+send envoys to meet new factions and generate contracts or unique trade deals
+
+li
+private game worlds deployed on a separate server for testing or playing with friends
+
+li
+take on bounties to earn credits or pirate other players trade routes
+
+li
+a GraphQL API for querying systems and waypoints
+
+li
+deploy envoys to track rumors and generate contracts
 
 h2
 Funding
@@ -101,6 +128,21 @@ If you are new to SpaceTraders, you should try our interactive quickstart guide 
 
 p
 If you're looking for some project inspiration, here are some ideas to get you started:
+
+li
+create a script to mine asteroids and automate trade routes
+
+li
+build a web or mobile app to manage your fleet of ships
+
+li
+track and share market price data with other players
+
+li
+generate an SDK from the OpenAPI spec and publish it
+
+li
+create a Discord bot for others players to use
 
 p
 And finally, if you find an issue and want to report it, please open an issue on our GitHub repository or share it in our Discord channel.

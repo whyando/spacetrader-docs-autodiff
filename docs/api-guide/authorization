@@ -21,6 +21,9 @@ The SpaceTraders API requires that you authenticate with a valid JWT bearer toke
 p
 Once you have a JWT bearer token, you can use it to authenticate with the API by including it in the Authorization header of every request. The following is an example of authenticating with the API:
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 

@@ -18,6 +18,9 @@ Exports are goods produced at the waypoint, and typically have a lower purchase 
 p
 Trade routes between imports and exports will typically be the most profitable way to earn credits in SpaceTraders.
 
+button
+Send Request
+
 code
 curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints/:waypointSymbol/market' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 

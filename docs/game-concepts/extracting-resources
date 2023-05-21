@@ -21,6 +21,9 @@ Extracting resources
 p
 You can extract resources from a location by calling the following endpoint. After an extraction, your ship will be on a cooldown. You can still navigate while on a cooldown, but you cannot perform most other ship actions.
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/extract' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
@@ -30,11 +33,17 @@ Surveying
 p
 You can survey a waypoint to find more targeted locations to extract from. Surveying a waypoint will yield a list of locations that are more likely to yield the resource you are looking for.
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/survey' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 To use a survey result, you must call the extract endpoint with the full survey result. Surveys have a limited lifetime, so you must use the survey result before it expires. Surveys also have a limited deposit size, and will eventually be depleted.
+
+button
+Send Request
 
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/extract' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "survey": ":survey"   }'

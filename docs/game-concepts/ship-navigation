@@ -24,11 +24,17 @@ Orbiting and docking
 p
 Before a ship can travel, you must first confirm that the ship is undocked and in-orbit. You can call the following endpoint to confirm your ship is in orbit, or command it to move into orbit:
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/orbit' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 Conversely, you can call the following endpoint to dock your ship at a waypoint:
+
+button
+Send Request
 
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
@@ -42,8 +48,23 @@ Flight mode
 p
 Your ship's flight mode determines the rate at which it travels and the amount of fuel consumed. There are four flight modes:
 
+strong
+CRUISE
+
+strong
+BURN
+
+strong
+DRIFT
+
+strong
+STEALTH
+
 p
 To update your ship's flight mode, you can call the following endpoint:
+
+button
+Send Request
 
 code
 curl --request PATCH \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/nav' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "flightMode": "CRUISE"   }'
@@ -60,6 +81,9 @@ Navigation also consumes fuel, which is required to power the ship's engines. Th
 p
 To navigate your ship to a waypoint, you can call the following endpoint:
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":waypointSymbol"   }'
 
@@ -75,11 +99,17 @@ Jumping a ship however is instantaneous, but it requires a jump drive and a unit
 p
 To warp your ship to a new system, you can call the following endpoint:
 
+button
+Send Request
+
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/warp' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "systemSymbol": ":systemSymbol"   }'
 
 p
 To jump your ship to a new system, you can call the following endpoint:
+
+button
+Send Request
 
 code
 curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/jump' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "systemSymbol": ":systemSymbol"   }'
