@@ -16,11 +16,12 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Crawl Docs
-        run: ./run.sh
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: ./run.sh
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[AUTO] Update Docs."
