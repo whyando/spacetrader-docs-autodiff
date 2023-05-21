@@ -1,0 +1,106 @@
+SpaceTraders - Getting started
+
+p
+Introduction
+
+h1
+Getting started
+
+p
+Weekend Server Reset
+
+p
+The server reset on 2023-05-13 at 11:00AM PST to accomodate new players and push important fixes to the game.
+
+p
+We are also working on a detailed plan for how we manage resets in the future and will communicate that plan in the docs and on Discord when it is ready.
+
+p
+SpaceTraders is an API-based game where you acquire and manage a fleet of ships to explore, trade, and fight your way across the galaxy.
+
+h2
+Quickstart
+
+p
+Try out the SpaceTraders API directly in your browser.
+
+h2
+API Reference
+
+p
+Interactive API  documentation power by Stoplight.
+
+h2
+API guide
+
+p
+Learn the fundamentals of working with the SpaceTraders API.
+
+h2
+Support Us
+
+p
+Donations support the developers and reserve your agent call sign after server resets.
+
+h2
+Overview
+
+p
+SpaceTraders is an open-universe game and learning platform that offers a set of HTTP endpoints to control a fleet of ships and explore a multiplayer universe.
+
+p
+The API is documented using OpenAPI and Stoplight Studio. You can send your first request right here in your browser to check the status of the game server.
+
+code
+curl 'https://api.spacetraders.io/v2/'
+
+p
+Unlike a traditional game, SpaceTraders does not have a first-party client or app to play the game. Instead, you can use the API to build your own client, write a script to automate your ships, or try an app built by the community.
+
+p
+We have a Discord channel where you can share your projects, ask questions, and get help from other players.
+
+h2
+Gameplay
+
+p
+The goal of the game is to manage a fleet of ships as you explore the universe and try to turn a profit. You can trade goods across systems, mine asteroids for valuable ores, or take on faction contracts to earn credits and reputation.
+
+p
+All players operate in the same universe, so you can compete with others to earn the most credits or chart the most systems. The game is currently in alpha, and we plan to add player-vs-player combat, bounty hunting, and more.
+
+h2
+Roadmap
+
+p
+We plan to work toward the following features and capabilities. If you have any feedback or suggestions, please share them in our Discord channel.
+
+h2
+Funding
+
+p
+We are a small self-funded team dedicated to keeping the SpaceTraders platform alive and accessible for everyone, and free for as long as we can support it.
+
+p
+You can donate to the project using the link below. Contributions will go directly towards maintaining server costs for the community. As we fund everything out of pocket, every donation, no matter the size, makes a big difference.
+
+p
+We’re grateful for your support and excited to see what you build with the SpaceTraders API!
+
+p
+Donate to SpaceTraders ->
+
+h2
+Next steps
+
+p
+The SpaceTraders API is an excellent platform to learn a new programming language, test a new framework, or stretch your skills in a fun and meaningful way.
+
+p
+If you are new to SpaceTraders, you should try our interactive quickstart guide which will walk you through basic API requests in just a few minutes.
+
+p
+If you're looking for some project inspiration, here are some ideas to get you started:
+
+p
+And finally, if you find an issue and want to report it, please open an issue on our GitHub repository or share it in our Discord channel.
