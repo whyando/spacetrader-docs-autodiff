@@ -22,7 +22,7 @@ button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/my/factions' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/my/factions' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 Agent vs Account
@@ -43,7 +43,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/register' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "YOUR_CALL_SIGN",    "faction": "COSMIC"   }'
+curl --request POST \ --url 'http://127.0.0.1:8080/register' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "YOUR_CALL_SIGN",    "faction": "COSMIC"   }'
 
 h3
 Viewing your agent
@@ -55,7 +55,7 @@ button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h2
 Factions
@@ -76,7 +76,7 @@ button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/factions' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/factions' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h3
 Faction contracts
@@ -94,7 +94,7 @@ button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/my/contracts' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/my/contracts' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 As agents complete contracts and conduct trade with factions, they earn reputation, which can be used to unlock new types of ships, upgrades, gate access, and high margin trade goods.

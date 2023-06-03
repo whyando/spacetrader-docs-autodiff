@@ -19,7 +19,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":asteroidFieldWaypointSymbol"   }'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":asteroidFieldWaypointSymbol"   }'
 
 p
 Your ship navigation status should now be IN_TRANSIT and your route will show you the timestamp of your ship's arrival.
@@ -37,7 +37,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h2
 Refuel your ship
@@ -49,7 +49,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/refuel' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/refuel' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 Refuel requests will only succeed if the current location has fuel offered for sale at the marketplace. One unit of fuel at the marketplace replenishes 100 units in the ship's tank. If you try to refuel at a location that doesn't have fuel, you will receive an error code.
@@ -61,7 +61,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/orbit' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/orbit' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h2
 Extract ores and minerals
@@ -73,7 +73,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/extract' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/extract' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 After extraction, your ship will be on a cooldown and you won't be able to extract again until the cooldown expires. Try sending another extract request to see the response for a cooldown error code.

@@ -19,7 +19,7 @@ button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints/:asteroidFieldWaypointSymbol/market' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/systems/:systemSymbol/waypoints/:asteroidFieldWaypointSymbol/market' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 Since your ship is present at the location, you can see the purchase and sell prices for each good.
@@ -37,7 +37,7 @@ button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/cargo' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h2
 Sell goods
@@ -49,7 +49,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 You can sell your cargo at a marketplace by sending a POST request to the my/ships/:shipSymbol/sell endpoint. You will need to specify the type of good you want to sell, along with the number of units.
@@ -58,7 +58,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/sell' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "IRON_ORE",    "units": "100"   }'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/sell' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "IRON_ORE",    "units": "100"   }'
 
 p
 The response will include details about your agent, ship cargo, and the transaction. You can see the total price for the transaction in the totalPrice field.

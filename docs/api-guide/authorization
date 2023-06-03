@@ -25,7 +25,7 @@ button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 The SpaceTraders API will return a 400 Unauthorized error if you attempt to access an endpoint without a valid JWT bearer token.

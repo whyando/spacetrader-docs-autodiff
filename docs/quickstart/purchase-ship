@@ -7,31 +7,40 @@ h1
 Purchase Ship
 
 p
-Shipyards allow you to purchase and repair ships, as well as swap out different modules and mounts. To purchase a ship, you will need to find a waypoint with a shipyard and then send a request to the my/ships endpoint.
+Shipyards allow you to purchase ships, and will eventually allow you to repair, as well as swap out different modules and mounts. To purchase a ship, you will need to find a waypoint with a shipyard.
 
 h2
 Find a shipyard
 
 p
-Look for a waypoint with the SHIPYARD trait. You can use the following endpoint to find all waypoints in your current system. You will notice that there is an orbital station that has a shipyard, which you can use to purchase a mining drone.
+Look for a waypoint with the SHIPYARD trait. You can use the following endpoint to find all waypoints in your current system. Take note of the symbol for the orbital station waypoint that has a shipyard, which you can use to purchase a mining drone.
 
 button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/systems/:systemSymbol/waypoints' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h2
 View available ships
 
 p
-To view the ships available for purchase at a shipyard, send the following request. You will notice that there is a mining drone available for purchase. To see the exact prices of each ship, you will need to have another ship present at the location.
+To view the ships available for purchase at a shipyard, send the following request. You will notice that there is a mining drone available for purchase, which can help you fulfill your starting contract.
 
 button
 Send Request
 
 code
-curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints/:shipyardWaypointSymbol/shipyard' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'http://127.0.0.1:8080/systems/:systemSymbol/waypoints/:shipyardWaypointSymbol/shipyard' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+Ship Price Visibility
+
+p
+Several parts of the API have some fields that are hidden unless you have a ship present at the location.
+
+p
+When starting as a new agent, a probe ship was provided for you at this orbital station, which allows you to see the details of the ships available for purchase.
 
 h2
 Purchase a ship
@@ -46,4 +55,4 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "shipType": "SHIP_MINING_DRONE",    "waypointSymbol": ":shipyardWaypointSymbol"   }'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "shipType": "SHIP_MINING_DRONE",    "waypointSymbol": ":shipyardWaypointSymbol"   }'

@@ -19,7 +19,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":deliveryWaypointSymbol"   }'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:miningShipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":deliveryWaypointSymbol"   }'
 
 h2
 Deliver contract goods
@@ -34,7 +34,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/deliver' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "shipSymbol": ":miningShipSymbol",    "tradeSymbol": "COPPER_ORE",    "units": "100"   }'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/contracts/:contractId/deliver' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "shipSymbol": ":miningShipSymbol",    "tradeSymbol": "COPPER_ORE",    "units": "100"   }'
 
 h2
 Fulfill contract
@@ -49,4 +49,4 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/fulfill' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'http://127.0.0.1:8080/my/contracts/:contractId/fulfill' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'

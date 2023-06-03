@@ -13,6 +13,102 @@ p
 If you have any questions, please ask in the #general-chat channel on Discord.
 
 h2
+June 03, 2023
+
+p
+This week’s reset focused on tweaking the starter system economics and removing some exploits from last week’s release. We also added the ability to install and remove mounts from your ships using the new /my/ships/{shipSymbol}/mounts endpoints.
+
+p
+There is only one breaking change this week that will likely affect your scripts. Purchasing a ship will now require a ship to be present at the location of the shipyard. This is to prevent agents from too easily spreading across the galaxy.
+
+p
+To continue to make the quickstart as easy as possible, a probe ship is seeded at your starting shipyard to enable ship purchasing right away.
+
+p
+We also applied various tweaks to starter systems markets and asteroids:
+
+li
+the starting system asteroid now only contains common metal deposits, meaning agents will need to venture outside of the starting system to maximize profits from mining.
+
+li
+exchange prices should now better incentivize agents to sell when supplies are low, and purchase when supplies are high
+
+li
+trade volume has been lowered across the starting system meaning agents are likely to see more volatile prices early on in the reset
+
+li
+market growth / decay is being tested this reset, so players should see trade volume increase with consistent trade and when imports are met (and thus more stable prices)
+
+li
+exchanges have been seeded at asteroids in populated systems across the galaxy
+
+li
+starting contracts are now much easier to complete due to the smaller trade volumes and various bugs have been fixed
+
+li
+contract deliveries should now come from the least supplied markets and the new agent contract should provide better “on-fulfilled” payment terms
+
+li
+to compensate for lower contract payments, starting agents will begin with 150,000 credits
+
+li
+contracts should start expiring this week and will be removed if you don’t accept the terms; generating new contracts are still a WIP so if you find bugs please let us know
+
+p
+Later during this reset we might be adding the ability to install / remove modules as well, but it might wait until the following week. We had a busy weekend with the holiday so there is still a lot of work to do that didn’t make it into this reset.
+
+p
+Enjoy and please file bugs and exploits as you explore!
+
+p
+Breaking
+
+li
+Added requirement of ship presence at shipyard for purchasing a ship (6c4e3fe9)
+
+p
+Updates
+
+li
+Added ability to install and remove ship mounts (05d1248c)
+
+li
+Enhanced new agent experience: easier new agent contracts, increased new agent contract payment, new agent probe ship at shipyard (13f7629f, 14695b27, 64a9b892)
+
+li
+Updated trade and economy: rebalanced trade prices, tweaked price of fuel, removed antimatter from starting systems and homeworld exports (fbcf99da, 1ed2f29c, e95caf99)
+
+li
+Changed starter system parameters (b82e5695)
+
+p
+Fixes
+
+li
+Fixed various contract-related bugs: bug with contract generation selecting over supplied markets, bug with contract generation, contract delivery at wrong destination, new agent contract destination (f637766f, 73379e77, 02091bba, 43fccb03)
+
+li
+Addressed a bug with charting waypoints (d838011b)
+
+li
+Improved data in ShipInTransitError (303c17c7)
+
+p
+Internal
+
+li
+Updated background jobs for contract processing and market growth (63a03f4e, 6d8ac036, 39b8b201 fab37233, 3640c6b2, 4079ca6a)
+
+li
+Added module install command, ship install / remove error codes, and refactored register agent (6df4b927, 3adb05e0, 94ff962b, 751955d4)
+
+p
+Documentation
+
+li
+Updated quickstart guide with new probe (8dbbb5d4)
+
+h2
 May 20, 2023
 
 p
