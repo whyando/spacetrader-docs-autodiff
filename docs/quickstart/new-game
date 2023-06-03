@@ -34,7 +34,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'http://127.0.0.1:8080/register' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "INSERT_CALLSIGN_HERE",    "faction": "COSMIC"   }'
+curl --request POST \ --url 'https://api.spacetraders.io/v2/register' \ --header 'Content-Type: application/json' \ --data '{    "symbol": "INSERT_CALLSIGN_HERE",    "faction": "COSMIC"   }'
 
 p
 The response should include your access token, which will be used to authenticate all future requests. For now you should save this token in a safe place. Anyone with your access token can access your agent and control your ships.
@@ -46,7 +46,7 @@ button
 Send Request
 
 code
-curl 'http://127.0.0.1:8080/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'https://api.spacetraders.io/v2/my/agent' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h2
 View your starting location
@@ -64,7 +64,7 @@ button
 Send Request
 
 code
-curl 'http://127.0.0.1:8080/systems/:systemSymbol/waypoints/:waypointSymbol' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints/:waypointSymbol' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 Dynamic Request Values

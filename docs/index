@@ -49,7 +49,7 @@ button
 Send Request
 
 code
-curl 'http://127.0.0.1:8080/'
+curl 'https://api.spacetraders.io/v2/'
 
 p
 Unlike a traditional game, SpaceTraders is headless and does not have a first-party client to play the game.

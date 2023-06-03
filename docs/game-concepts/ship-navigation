@@ -28,7 +28,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:shipSymbol/orbit' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/orbit' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 Conversely, you can call the following endpoint to dock your ship at a waypoint:
@@ -37,7 +37,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:shipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/dock' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 The orbit and dock requests are idempotent, meaning you can call them successively and the result will be the same. This is useful if you want to ensure your ship is in orbit before you attempt to travel to another waypoint.
@@ -67,7 +67,7 @@ button
 Send Request
 
 code
-curl --request PATCH \ --url 'http://127.0.0.1:8080/my/ships/:shipSymbol/nav' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "flightMode": "CRUISE"   }'
+curl --request PATCH \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/nav' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "flightMode": "CRUISE"   }'
 
 h2
 Waypoint navigation
@@ -85,7 +85,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:shipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":waypointSymbol"   }'
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/navigate' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "waypointSymbol": ":waypointSymbol"   }'
 
 h2
 Warping and jumping
@@ -103,7 +103,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:shipSymbol/warp' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "systemSymbol": ":systemSymbol"   }'
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/warp' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "systemSymbol": ":systemSymbol"   }'
 
 p
 To jump your ship to a new system, you can call the following endpoint:
@@ -112,7 +112,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'http://127.0.0.1:8080/my/ships/:shipSymbol/jump' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "systemSymbol": ":systemSymbol"   }'
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:shipSymbol/jump' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "systemSymbol": ":systemSymbol"   }'
 
 h2
 Gate travel

@@ -28,7 +28,7 @@ button
 Send Request
 
 code
-curl 'http://127.0.0.1:8080/systems' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'https://api.spacetraders.io/v2/systems' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 The best way to visualize the game would be to plot the x and y coordinates of each system on a graph, which should show a rough spiral shape of the universe.
@@ -52,7 +52,7 @@ button
 Send Request
 
 code
-curl 'http://127.0.0.1:8080/systems/:systemSymbol/waypoints' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 A waypoint has a type, a set of x, y coordinates, and a unique symbol name that you can use to reference it. Waypoints may also have orbital waypoints, which are locations within the orbit of the location.

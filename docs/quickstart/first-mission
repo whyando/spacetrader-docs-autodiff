@@ -19,7 +19,7 @@ button
 Send Request
 
 code
-curl 'http://127.0.0.1:8080/my/contracts' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'https://api.spacetraders.io/v2/my/contracts' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h2
 Contract Terms
@@ -40,7 +40,7 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'http://127.0.0.1:8080/my/contracts/:contractId/accept' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/contracts/:contractId/accept' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 Don't stress too much about the details of the contract for now. If the contract is too difficult, you can always let the contract expire and accept a new one, or start a new agent and try again. Use the starter contract as an opportunity to learn the basics of the game.

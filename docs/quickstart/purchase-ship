@@ -19,7 +19,7 @@ button
 Send Request
 
 code
-curl 'http://127.0.0.1:8080/systems/:systemSymbol/waypoints' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 h2
 View available ships
@@ -31,7 +31,7 @@ button
 Send Request
 
 code
-curl 'http://127.0.0.1:8080/systems/:systemSymbol/waypoints/:shipyardWaypointSymbol/shipyard' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+curl 'https://api.spacetraders.io/v2/systems/:systemSymbol/waypoints/:shipyardWaypointSymbol/shipyard' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
 
 p
 Ship Price Visibility
@@ -55,4 +55,4 @@ button
 Send Request
 
 code
-curl --request POST \ --url 'http://127.0.0.1:8080/my/ships' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "shipType": "SHIP_MINING_DRONE",    "waypointSymbol": ":shipyardWaypointSymbol"   }'
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE' \ --header 'Content-Type: application/json' \ --data '{    "shipType": "SHIP_MINING_DRONE",    "waypointSymbol": ":shipyardWaypointSymbol"   }'
