@@ -13,6 +13,54 @@ p
 If you have any questions, please ask in the #general-chat channel on Discord.
 
 h2
+June 10, 2023
+
+p
+This week was busier for the team so we didn't have a chance to add any new game mechanics, but we did fix a few bugs and tweak some of the game mechanics from last week's release.
+
+p
+In this release, we've implemented several game mechanics updates to improve gameplay experience and balance the universe economy. Notably, warping is now slower than inner-system travel, and exchange purchase/sell prices are more aligned with lower margins across the universe. In addition, new requirements for navigation and adjustments to mining and trade have been introduced to enrich the universe's economy. In response to player feedback and our ongoing testing, we've also resolved several bugs and improved system performance.
+
+p
+Breaking
+
+li
+Navigation and warp now require the ship to be in orbit (70f88b05)
+
+p
+Updates
+
+li
+Changed travel mechanics: warping is now slower than inner-system travel (8a258ac0)
+
+li
+Rebalanced economy: exchange purchase/sell prices are more aligned, margins are a bit lower across the universe, starter system exchanges now support higher volumes in common ores and minerals, and - have lower trade volume for diamonds (729b29f5, def78e67)
+
+li
+Mining lasers now only extract ores and metals; mineral deposits now contain precious stones (def78e67)
+
+li
+Preparing to add gas extraction and fuel refinement (bb274b58)
+
+p
+Fixes
+
+li
+Corrected negotiate contract status from 200 to 201 (fba6e0bd)
+
+li
+Fixed bug allowing installation of one more mount than specs allow (2b7ead08)
+
+li
+Fixed game description of mineral deposits (bd9f318c)
+
+li
+Validated mount symbol on install (7afd2537)
+
+p
+Enjoy your updated journey across the universe!
+
+h2
 June 03, 2023
 
 p
