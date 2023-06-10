@@ -15,6 +15,18 @@ Fly to an asteroid field
 p
 You can navigate your new mining drone to the nearby asteroid field. Drones are slow to navigate but fairly cheap, so it may take a while for your drone to arrive.
 
+p
+First let's make sure your ship is in-orbit, and then we will navigate to our target waypoint.
+
+button
+Send Request
+
+code
+curl --request POST \ --url 'https://api.spacetraders.io/v2/my/ships/:miningShipSymbol/orbit' \ --header 'Authorization: Bearer INSERT_TOKEN_HERE'
+
+p
+Now that your ship is in-orbit, we can navigate to the asteroid field. You can navigate to a waypoint by sending the following request:
+
 button
 Send Request
 
