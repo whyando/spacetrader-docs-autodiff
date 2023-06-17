@@ -13,6 +13,60 @@ p
 If you have any questions, please ask in the #general-chat channel on Discord.
 
 h2
+June 17, 2023
+
+p
+This week we mostly focused on some bug fixes and server maintanence tasks that we've been putting off for a while.
+
+p
+Going into our summer schedule, updates might be a bit slower than usual depending on vacation schedules, but we'll still be around to fix bugs and answer questions. We might take the time to work on some larger features that require more time to implement. However we'll continue to maintain regular weekly resets while the economy is hot.
+
+p
+Next week we may experiment with extending some of the travel times to make the economy remain balanced longer into the week. As always, if you find any bugs or discover any exploits, please let us know!
+
+p
+Breaking
+
+li
+Corrected the transaction object in the install / remove 201 response (5ae4f737)
+
+p
+Updates
+
+li
+Slightly nerfed surveys to have fewer yields and occurrences (c0e04734)
+
+li
+Provided more cargo modules on heavy freighters (1f8fbdcb)
+
+li
+Added an option to specify the refuel amount in the refuel request (69f2d40a)
+
+li
+Increased the system count to 12k (be5a3a72)
+
+p
+Fixes
+
+li
+Fixed the ship role on the probe ship (0a14c9e8)
+
+li
+Resolved a server error on extraction (bb56cf52)
+
+li
+Corrected the sell cargo error message (2d985d3f)
+
+li
+Orbital stations are now correctly marked as orbitals to a parent waypoint (d8785a01)
+
+li
+Improved universe seeding: starter waypoints are now closer together, and
+
+li
+starter systems are seeded with closer waypoints for fuel (ad4c2f0b, 2bc6e377)
+
+h2
 June 10, 2023
 
 p

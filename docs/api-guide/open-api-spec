@@ -24,6 +24,9 @@ The OpenAPI specification can be used to generate a client library for the Space
 p
 The following is an example of generating a TypeScript client library using the typescript-axios generator and the bundled specification from Stoplight.
 
+p
+The following openapi-generator was installed using homebrew, but you can find installation instructions for your platform here.
+
 code
 openapi-generator generate \
  -i https://stoplight.io/api/v1/projects/spacetraders/spacetraders/nodes/reference/SpaceTraders.json?fromExportButton=true&snapshotType=http_service&deref=optimizedBundle \
@@ -45,47 +48,3 @@ Our specification file uses the $ref keyword frequently to reference other files
 
 p
 However, Stoplight has a link for the bundled specification that can be used to generate a client library.
-
-h2
-Using the Client Library
-
-p
-The generated client library can be used to interact with the SpaceTraders API. The following is an example of using the TypeScript client library to retrieve a list of systems.
-
-code
-import axios from 'axios'
-import {
-  Configuration,
-  Cooldown,
-  DefaultApi,
-  FleetApi,
-  SystemsApi
-} from 'spacetraders-sdk'
-
-export const configuration = new Configuration({
-  basePath: process.env.BASE_PATH,
-  accessToken: process.env.ACCESS_TOKEN
-})
-
-export const instance = axios.create({})
-
-// example retry logic for 429 rate-limit errors
-instance.interceptors.response.use(undefined, async (error) => {
-  const apiError = error.response?.data?.error
-
-  if (error.response?.status === 429) {
-    const retryAfter = error.response.headers['retry-after']
-
-    await new Promise((resolve) => {
-      setTimeout(resolve, retryAfter * 1000)
-    })
-
-    return instance.request(error.config)
-  }
-
-  throw error
-})
-
-const system = new SystemsApi(configuration, undefined, instance)
-
-system.getSystems().then(console.log)
