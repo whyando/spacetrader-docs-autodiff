@@ -13,6 +13,48 @@ p
 If you have any questions, please ask in the #general-chat channel on Discord.
 
 h2
+June 24, 2023
+
+p
+This week is just a light release of bug fixes and minor updates. We will have to skip a reset next weekend due to our schedules, but we'll be back the following week with a new release.
+
+p
+The only major change this week is downgrading diamond profitability to be closer to gold and platinum (sorry diamond miners!). There will be two weeks between resets, so maybe the downgrade in diamond prices will stretch things out a bit.
+
+p
+We've downgraded some of the extra server resources to optimize costs. There is a small chance we are too close to the limit, which might require some downtime mid-week to add resources back in.
+
+p
+Updates
+
+li
+An agent symbol that's already taken now throws a 409 error instead of 422 (013037d4)
+
+li
+Diamonds are now as profitable as gold or platinum (a78b9722)
+
+li
+Contracts now increase the supply at the market on fulfillment (0b91098a)
+
+li
+Increased the credits leaderboard to 15 spots (9ad38718)
+
+p
+Fixes
+
+li
+Fixed bug in the refine response fields for trade symbol (af99736c)
+
+li
+Added diamonds to Surveyor III (54a7adbd)
+
+li
+Fixed 500 bug with surveying waypoints without traits (ce73b2de)
+
+li
+Fixed bug with refuel amounts not being accurate (11da3508)
+
+h2
 June 17, 2023
 
 p
